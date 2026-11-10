@@ -34,9 +34,12 @@ RUN npm ci --omit=dev
 # Derlenmiş dosyaları ve kaynakları aktar
 COPY --from=builder /app /app
 
+# Hugging Face Spaces (7860) ve Standart (3000) Portları
+EXPOSE 7860 3000
+
 # Sağlık Kontrolü (Healthcheck)
 HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
   CMD node -e "console.log('Bot calisiyor')" || exit 1
 
-# Botu başlat
-CMD ["npm", "run", "start:bot"]
+# Web Server & Discord Botunu Birlikte Başlat
+CMD ["npm", "start"]
