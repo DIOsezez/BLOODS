@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  # MTA Illegal Birlik Discord Botu (MongoDB Bağımsız, 7/24 Çalışma)
+  mta-discord-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mta_illegal_birlik_bot
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
+      - DISCORD_CLIENT_ID=${DISCORD_CLIENT_ID}
+      - DISCORD_GUILD_ID=${DISCORD_GUILD_ID}
+      - LOG_LEVEL=info
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "3000:3000"
+

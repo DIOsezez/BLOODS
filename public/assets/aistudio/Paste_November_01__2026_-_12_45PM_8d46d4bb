@@ -1,0 +1,1618 @@
+MTA ILLEGAL BİRLİK YÖNETİM BOTU
+
+TAM KAPSAMLI MASTER GELİŞTİRME PROMPTU
+
+1. PROJE TANIMI VE HEDEFİ
+
+Sen deneyimli bir yazılım mimarı, Discord bot geliştiricisi, TypeScript uzmanı, MongoDB veritabanı uzmanı ve güvenlik mühendisisin.
+
+Görevin, MTA:SA Roleplay sunucularında kullanılmak üzere profesyonel, kapsamlı, modüler, güvenli ve uzun süre kullanılabilecek bir Illegal Birlik Yönetim Discord Botu geliştirmektir.
+
+Bu bot, bir illegal birliğin Discord üzerindeki bütün yönetim işlemlerini tek merkezden gerçekleştirmesini sağlamalıdır.
+
+Basit bir komut botu oluşturmanı istemiyorum.
+
+Birliğin bütün yönetim süreçlerini birbirine bağlayan kapsamlı bir sistem oluşturmanı istiyorum.
+
+Sistem şu alanları kapsamalıdır:
+
+* Birlik yönetimi
+* Üye ve karakter yönetimi
+* Rütbe ve hiyerarşi
+* Yetkilendirme
+* Başvuru sistemi
+* Recruiter sistemi
+* Kasa ve ekonomi
+* Envanter
+* Araç filosu
+* Hood ve bölge yönetimi
+* Görev ve operasyon kayıtları
+* Kurgusal savaş kayıtları
+* Diplomatik ilişkiler
+* Ceza ve sicil
+* İhbar ve şikayetler
+* Kanıt arşivi
+* Ticket sistemi
+* Duyurular
+* İstatistikler
+* Başarı ve aktivite sistemi
+* Gizli kayıtlar
+* İç soruşturma
+* Otomatik Discord sunucu kurulumu
+* Otomatik panel oluşturma
+* Loglama ve denetim
+* Yedekleme
+* Sistem güvenliği
+
+Bütün bu modüller aynı veritabanını ve ortak servisleri kullanmalıdır.
+
+⸻
+
+2. KESİN PROJE KISITLAMALARI
+
+Bu kurallar kesinlikle ihlal edilmemelidir.
+
+* Web sitesi oluşturulmayacak.
+* Web dashboard oluşturulmayacak.
+* Web yönetim paneli oluşturulmayacak.
+* Harici yönetim arayüzü oluşturulmayacak.
+* Yönetim işlemlerinin tamamı Discord üzerinden gerçekleştirilecek.
+* Slash komutları kullanılacak.
+* Discord butonları kullanılacak.
+* Select menüler kullanılacak.
+* Modal formlar kullanılacak.
+* Kalıcı veritabanı kullanılacak.
+* Bot 7/24 çalışmaya uygun olacak.
+* Discord sunucusu otomatik kurulabilecek.
+* Bütün sistemler birbirleriyle entegre çalışacak.
+* Güvenlik ve yetkilendirme zorunlu olacak.
+* Loglama ve hata yönetimi zorunlu olacak.
+* Kullanıcıya gösterilen bütün metinler Türkçe olacak.
+
+Kod içerisindeki değişken, sınıf ve fonksiyon isimleri İngilizce olabilir. Ancak Discord üzerinde görünen bütün komut açıklamaları, butonlar, embedler, menüler, hata mesajları ve bildirimler Türkçe olmalıdır.
+
+Türkçe arayüz bir tercih değil, zorunluluktur.
+
+⸻
+
+3. TEKNOLOJİ VE YAZILIM MİMARİSİ
+
+Aşağıdaki teknolojileri kullan:
+
+* Node.js
+* TypeScript
+* Discord.js v14
+* MongoDB
+* Mongoose
+* dotenv
+* Zod veya benzeri veri doğrulama kütüphanesi
+* Pino veya benzeri loglama sistemi
+
+Projeyi modüler mimariyle geliştir.
+
+Önerilen klasör yapısı:
+
+src/
+├── commands/
+├── events/
+├── interactions/
+├── buttons/
+├── modals/
+├── selectMenus/
+├── systems/
+│   ├── members/
+│   ├── characters/
+│   ├── ranks/
+│   ├── permissions/
+│   ├── applications/
+│   ├── recruiters/
+│   ├── tickets/
+│   ├── economy/
+│   ├── inventory/
+│   ├── vehicles/
+│   ├── territories/
+│   ├── missions/
+│   ├── operations/
+│   ├── wars/
+│   ├── diplomacy/
+│   ├── punishments/
+│   ├── reports/
+│   ├── evidence/
+│   ├── announcements/
+│   ├── statistics/
+│   ├── achievements/
+│   ├── investigations/
+│   └── automation/
+├── database/
+├── services/
+├── middleware/
+├── utils/
+├── config/
+├── types/
+└── tests/
+
+Gerektiğinde bu yapıyı daha iyi bir mimariyle geliştirebilirsin.
+
+Ancak bütün sistemleri tek bir dosyaya yığma.
+
+Her modülün kendi servisleri, modelleri, komutları ve doğrulama yapısı bulunmalıdır.
+
+⸻
+
+4. ANA DISCORD YÖNETİM PANELİ
+
+Botun en önemli bileşeni Discord içerisindeki yönetim panelidir.
+
+Bot sunucuya eklendiğinde /kurulum komutuyla otomatik kurulum başlatılabilmelidir.
+
+/panel komutu ana yönetim panelini açmalıdır.
+
+Ana panelde şu kategoriler bulunmalıdır:
+
+1. Birlik Yönetimi
+2. Üye Yönetimi
+3. Rütbe Yönetimi
+4. Yetki Yönetimi
+5. Başvuru Yönetimi
+6. Recruiter Yönetimi
+7. Kasa ve Ekonomi
+8. Envanter
+9. Araç Yönetimi
+10. Hood ve Bölgeler
+11. Görev Yönetimi
+12. Operasyon Kayıtları
+13. Savaş Yönetimi
+14. Diplomasi
+15. Sicil ve Cezalar
+16. İhbar ve Şikayetler
+17. Kanıt Arşivi
+18. Ticket Yönetimi
+19. Duyurular
+20. İstatistikler
+21. Başarı Sistemi
+22. Gizli Kayıtlar
+23. İç Soruşturma
+24. Güvenlik
+25. Sistem Ayarları
+
+Her kategori Discord butonları ve select menüler üzerinden açılmalıdır.
+
+Uzun işlemlerde Discord interaction süre sınırlarına uyulmalıdır.
+
+Gerekli yerlerde deferReply ve deferUpdate kullanılmalıdır.
+
+Panel mesajları bot yeniden başlatıldığında kaybolmamalıdır.
+
+Panel mesajlarının kanal ve mesaj ID bilgileri veritabanında tutulmalıdır.
+
+⸻
+
+5. BİRLİK YÖNETİMİ
+
+Birliğin genel bilgilerini yönetebileceği sistem oluştur.
+
+Tutulacak bilgiler:
+
+* Birlik adı
+* Birlik etiketi
+* Birlik açıklaması
+* Kuruluş tarihi
+* Birlik lideri
+* Yönetim kadrosu
+* Aktif üye sayısı
+* Toplam üye sayısı
+* Birlik durumu
+* Birlik geçmişi
+* Birlik duyuruları
+
+Yönetim bu bilgileri Discord üzerinden düzenleyebilmelidir.
+
+Birlik durumları:
+
+* Aktif
+* Pasif
+* Arşivlenmiş
+
+olmalıdır.
+
+⸻
+
+6. ÜYE VE KARAKTER YÖNETİMİ
+
+Birlik üyeleri için ayrıntılı kayıt sistemi oluştur.
+
+Her üye için:
+
+* Discord kullanıcı ID
+* Discord kullanıcı adı
+* MTA karakter adı
+* MTA karakter ID
+* Rütbe
+* Birliğe katılma tarihi
+* Davet eden Recruiter
+* Üye durumu
+* Sicil
+* Ceza geçmişi
+* Görev geçmişi
+* Başarı kayıtları
+* Terfi geçmişi
+* Birlikten ayrılma bilgisi
+
+tutulmalıdır.
+
+Üye durumları
+
+* Aktif
+* Pasif
+* İzinli
+* Askıda
+* Birlikten ayrılmış
+* Atılmış
+
+Üye işlemleri
+
+* Üye ekleme
+* Üye çıkarma
+* Üye bilgisi düzenleme
+* Karakter değiştirme
+* Üye profili görüntüleme
+* Üye geçmişi görüntüleme
+* Üye arama
+* Üye listeleme
+* Üye durumunu değiştirme
+* Üyeyi başka bir karakterle ilişkilendirme
+
+Bir Discord hesabının birden fazla MTA karakter kaydına sahip olabilmesine uygun mimari oluştur.
+
+Bütün üye işlemleri loglanmalıdır.
+
+⸻
+
+7. RÜTBE VE HİYERARŞİ SİSTEMİ
+
+Bu bölümde belirtilen rütbe sıralaması kesin olarak uygulanmalıdır.
+
+Başka bir varsayılan rütbe sistemi oluşturma.
+
+Kesin rütbe sıralaması
+
+Seviye	Rütbe	Açıklama
+5	OG	En yüksek rütbe
+4	Under OG (BG)	OG’nin altındaki yönetim rütbesi
+3	Recruiter	Çeteye Adam Çeker
+2	Kıdemli Üye	Deneyimli üye
+1	Üye	Başlangıç rütbesi
+
+Hiyerarşi:
+
+OG ← Under OG (BG) ← Recruiter ← Kıdemli Üye ← Üye
+
+Terfi yönü:
+
+Üye → Kıdemli Üye → Recruiter → Under OG (BG) → OG
+
+Varsayılan beş rütbe kurulum sırasında otomatik oluşturulmalıdır.
+
+Rütbe özellikleri
+
+Her rütbenin:
+
+* Adı
+* Seviyesi
+* Açıklaması
+* Discord rol ID’si
+* Yetkileri
+* Oluşturulma tarihi
+* Düzenlenme tarihi
+
+bulunmalıdır.
+
+Rütbe yönetimi
+
+Yetkili kişiler Discord üzerinden:
+
+* Rütbe oluşturabilmeli.
+* Rütbe silebilmeli.
+* Rütbe adını değiştirebilmeli.
+* Rütbe sırasını değiştirebilmeli.
+* Rütbe açıklamasını değiştirebilmeli.
+* Rütbe yetkilerini değiştirebilmeli.
+* Discord rolüyle eşleştirebilmeli.
+
+Ancak varsayılan rütbe sistemi ilk kurulumda belirtilen sırayla oluşturulmalıdır.
+
+Recruiter özel sistemi
+
+Recruiter rütbesinin görevi:
+
+Çeteye Adam Çeker.
+
+Recruiter üyeleri yeni adayları birliğe davet edebilmelidir.
+
+Davet kayıtlarında:
+
+* Davet edilen kişinin Discord hesabı
+* Adayın MTA karakter adı
+* Davet eden Recruiter
+* Davet tarihi
+* Başvuru durumu
+* Başvurunun sonucu
+* Birliğe katılma durumu
+
+tutulmalıdır.
+
+Recruiter performans istatistikleri bulunmalıdır.
+
+Örneğin:
+
+* Toplam davet
+* Başvuruya dönüşen davet
+* Kabul edilen aday
+* Reddedilen aday
+* Birliğe katılan kişi
+
+Terfi ve tenzil
+
+Her terfi veya tenzil işleminde:
+
+* İşlem numarası
+* Üye
+* Önceki rütbe
+* Yeni rütbe
+* İşlem nedeni
+* İşlemi yapan yetkili
+* Tarih
+
+kaydedilmelidir.
+
+Rütbe değiştiğinde Discord rolleri otomatik güncellenmelidir.
+
+Bir kullanıcı kendi kendine terfi yapamamalıdır.
+
+Yetkili kişiler yalnızca izin verilen seviyeye kadar işlem gerçekleştirebilmelidir.
+
+⸻
+
+8. YETKİLENDİRME SİSTEMİ
+
+Botun kendi yetki sistemi bulunmalıdır.
+
+Yetkiler yalnızca Discord rol adına göre belirlenmemelidir.
+
+Örnek izinler:
+
+* member.view
+* member.create
+* member.edit
+* member.remove
+* rank.promote
+* rank.demote
+* rank.manage
+* economy.view
+* economy.deposit
+* economy.withdraw
+* inventory.manage
+* vehicle.manage
+* application.review
+* recruiter.manage
+* ticket.manage
+* war.manage
+* diplomacy.manage
+* punishment.create
+* evidence.view
+* logs.view
+* settings.manage
+
+Admin her rütbeye özel yetkiler atayabilmelidir.
+
+Yetki kontrolü:
+
+* Slash komutlarında
+* Butonlarda
+* Select menülerde
+* Modal formlarda
+* Otomatik işlemlerde
+
+gerçekleştirilmelidir.
+
+Yetkisiz kullanıcılar doğrudan interaction göndererek işlem yapamamalıdır.
+
+⸻
+
+9. BAŞVURU SİSTEMİ
+
+Profesyonel birlik katılım başvuru sistemi oluştur.
+
+Kullanıcılar Discord üzerindeki başvuru panelinden başvuru yapabilmelidir.
+
+Başvuru soruları yönetim tarafından değiştirilebilmelidir.
+
+Varsayılan sorular:
+
+* OOC isim
+* Yaş
+* Discord kullanıcı adı
+* MTA karakter adı
+* Karakter geçmişi
+* Roleplay deneyimi
+* Birliğe katılma amacı
+* Ek açıklama
+
+Başvuru durumları
+
+* Beklemede
+* İnceleniyor
+* Kabul edildi
+* Reddedildi
+
+Başvuru özellikleri
+
+* Otomatik başvuru numarası
+* Başvuru tarihi
+* Başvuru sahibi
+* İnceleyen yetkili
+* Kabul nedeni
+* Red nedeni
+* Başvuru geçmişi
+* Başvuru puanlama
+* Yetkili notları
+
+Başvuru yönetimi
+
+Yetkililer:
+
+* Başvuruyu görüntüleyebilmeli.
+* Başvuruyu incelemeye alabilmeli.
+* Başvuruya puan verebilmeli.
+* Yetkili notu ekleyebilmeli.
+* Başvuruyu kabul edebilmeli.
+* Başvuruyu reddedebilmeli.
+* Başvuruyu başka yetkiliye devredebilmelidir.
+
+Kabul edildiğinde:
+
+1. Kullanıcıya DM gönder.
+2. Gerekli Discord rolünü ver.
+3. Üye kaydı oluştur.
+4. Varsayılan rütbeyi Üye olarak belirle.
+5. Recruiter davet kaydı varsa ilişkilendir.
+6. Başvuru kaydını güncelle.
+7. Log kanalına kayıt gönder.
+
+Reddedildiğinde:
+
+1. Red nedenini kaydet.
+2. Başvuru sahibine DM gönder.
+3. Başvuru geçmişini koru.
+4. İlgili log kanalına kayıt gönder.
+
+⸻
+
+10. TICKET SİSTEMİ
+
+Gelişmiş ticket sistemi oluştur.
+
+Ticket türleri:
+
+* Genel destek
+* Birlik başvurusu desteği
+* Yönetim görüşmesi
+* Şikayet
+* İtiraz
+* İzin talebi
+* Üye işlemi
+* Diğer
+
+Ticket özellikleri
+
+* Otomatik ticket numarası
+* Ticket sahibi
+* Ticket sorumlusu
+* Ticket kategorisi
+* Ticket önceliği
+* Ticket durumu
+* Açılış tarihi
+* Kapanış tarihi
+* Kapatma nedeni
+* Ticket logu
+* Transcript
+* Yetkili atama
+* Ticket devretme
+* Ticket yeniden açma
+
+Öncelikler:
+
+* Düşük
+* Normal
+* Yüksek
+* Kritik
+
+Ticket kapatıldığında transcript kalıcı olarak saklanmalıdır.
+
+⸻
+
+11. KASA VE EKONOMİ SİSTEMİ
+
+Birliğin sanal kasasını yönetebileceği sistem oluştur.
+
+Özellikler:
+
+* Kasa bakiyesi
+* Para yatırma
+* Para çekme
+* Gelir kaydı
+* Gider kaydı
+* İşlem açıklaması
+* İşlemi yapan yetkili
+* İşlem tarihi
+* İşlem geçmişi
+* Kategori bazlı gelir/gider
+
+Her işlem benzersiz bir işlem numarası almalıdır.
+
+Kasa işlemleri veritabanında atomik olarak gerçekleştirilmelidir.
+
+Aynı işlem iki kez uygulanmamalıdır.
+
+Yetkisiz kişiler para çekememelidir.
+
+Admin işlem limitleri belirleyebilmelidir.
+
+Kasa geçmişi görüntülenebilmeli ve filtrelenebilmelidir.
+
+⸻
+
+12. ENVANTER SİSTEMİ
+
+Birliğe ait sanal envanter oluştur.
+
+Her eşya için:
+
+* Eşya adı
+* Eşya kategorisi
+* Miktar
+* Açıklama
+* Eklenme tarihi
+* İşlemi yapan kişi
+* Kaynak
+* Kullanım durumu
+
+tutulmalıdır.
+
+İşlemler:
+
+* Eşya ekleme
+* Eşya çıkarma
+* Miktar değiştirme
+* Envanter görüntüleme
+* Envanter geçmişi
+* Kategori yönetimi
+* Stok uyarısı
+
+Bu sistem MTA içerisindeki kurgusal oyun envanterini takip etmelidir.
+
+⸻
+
+13. ARAÇ FİLOSU
+
+Birliğin MTA içerisindeki araçlarını takip edebileceği sistem oluştur.
+
+Her araç için:
+
+* Araç adı
+* Model ID
+* Plaka
+* Araç sahibi
+* Sorumlu üye
+* Durum
+* Garaj bilgisi
+* Eklenme tarihi
+* Açıklama
+
+tutulmalıdır.
+
+Araç durumları:
+
+* Aktif
+* Kullanımda
+* Garajda
+* Bakımda
+* Pasif
+* Arşivlenmiş
+
+Araç atama ve teslim alma işlemleri loglanmalıdır.
+
+⸻
+
+14. HOOD VE BÖLGE YÖNETİMİ
+
+Birliğin MTA sunucusundaki sanal bölgelerini takip edebileceği sistem oluştur.
+
+Her bölge için:
+
+* Bölge adı
+* Bölge açıklaması
+* Bölge durumu
+* İlişkili birlik
+* Kontrol başlangıç tarihi
+* Bölge geçmişi
+* Bölge sorumlusu
+* İlgili kayıtlar
+
+tutulmalıdır.
+
+Birden fazla bölge tanımlanabilmelidir.
+
+Bölge durumları:
+
+* Kontrol altında
+* Tartışmalı
+* Nötr
+* Kaybedilmiş
+* Arşivlenmiş
+
+olabilir.
+
+Bölge değişiklikleri geçmişe kaydedilmelidir.
+
+⸻
+
+15. GÖREV VE OPERASYON KAYITLARI
+
+Birlik içerisinde RP amaçlı görev kayıt sistemi oluştur.
+
+Her görev için:
+
+* Görev adı
+* Görev açıklaması
+* Görev kategorisi
+* Sorumlu kişi
+* Katılımcılar
+* Başlangıç tarihi
+* Bitiş tarihi
+* Görev durumu
+* Sonuç
+* Yetkili notu
+
+tutulmalıdır.
+
+Görev durumları:
+
+* Hazırlanıyor
+* Aktif
+* Tamamlandı
+* İptal edildi
+* Arşivlendi
+
+Görevler Discord üzerinden oluşturulup yönetilmelidir.
+
+Operasyon kayıtları yalnızca oyun içi kurgusal RP faaliyetlerini belgelemelidir.
+
+⸻
+
+16. SAVAŞ VE ÇATIŞMA KAYIT SİSTEMİ
+
+MTA RP sunucusundaki kurgusal birlik çatışmalarını kayıt altına alabilecek sistem oluştur.
+
+Özellikler:
+
+* Kayıt numarası
+* İlgili birlikler
+* Başlangıç tarihi
+* Bitiş tarihi
+* Savaş durumu
+* Katılımcı listesi
+* RP sonucu
+* Kanıt bağlantıları
+* Yetkili açıklaması
+* Sonuç kaydı
+
+Durumlar:
+
+* Beklemede
+* Devam ediyor
+* Sonuçlandı
+* İptal edildi
+
+Savaş geçmişi görüntülenebilmelidir.
+
+Bu sistem yalnızca MTA içerisindeki kurgusal olayları kaydetmelidir.
+
+⸻
+
+17. DİPLOMASİ VE BİRLİK İLİŞKİLERİ
+
+Diğer birliklerle ilişkileri takip et.
+
+İlişki durumları:
+
+* Dost
+* Tarafsız
+* Gergin
+* Düşman
+* Ateşkes
+* İttifak
+
+Özellikler:
+
+* Birlik kaydı
+* İlişki durumu
+* İlişki değişiklik tarihi
+* Görüşme kayıtları
+* Anlaşma kayıtları
+* Ateşkes kayıtları
+* Diplomatik notlar
+* Geçmiş ilişkiler
+
+İlişki değişiklikleri yetkili onayıyla yapılmalıdır.
+
+⸻
+
+18. CEZA VE SİCİL SİSTEMİ
+
+Üyelerin birlik içindeki disiplin geçmişini yönet.
+
+Ceza türleri yönetim tarafından oluşturulabilmelidir.
+
+Örnekler:
+
+* Uyarı
+* İhtar
+* Yetki kısıtlaması
+* Geçici uzaklaştırma
+* Birlikten çıkarma
+
+Her ceza için:
+
+* Ceza ID
+* Üye
+* Ceza türü
+* Ceza nedeni
+* İşlemi yapan yetkili
+* Tarih
+* Süre
+* Kanıt
+* İtiraz durumu
+
+tutulmalıdır.
+
+Üye sicili görüntülenebilmelidir.
+
+İtiraz sistemi bulunmalıdır.
+
+⸻
+
+19. İHBAR VE ŞİKAYET SİSTEMİ
+
+Üyeler olaylar hakkında ihbar oluşturabilmelidir.
+
+İhbar kategorileri:
+
+* Üye şikayeti
+* Kural ihlali
+* Yetkili şikayeti
+* OOC şikayet
+* IC olay bildirimi
+* Diğer
+
+İhbarlar gizlilik seviyesine sahip olmalıdır.
+
+İhbarı yalnızca yetkili kişiler görebilmelidir.
+
+İhbar durumları:
+
+* Yeni
+* İnceleniyor
+* Kanıt bekleniyor
+* Sonuçlandı
+* Reddedildi
+
+olmalıdır.
+
+⸻
+
+20. KANIT VE DOSYA ARŞİVİ
+
+Discord üzerinden kanıt kaydı oluşturulabilmelidir.
+
+Kanıt türleri:
+
+* Görsel
+* Video bağlantısı
+* Metin
+* Discord mesaj bağlantısı
+* Diğer bağlantılar
+
+Her kanıt için:
+
+* Kanıt ID
+* Ekleyen kişi
+* İlgili olay
+* Tarih
+* Açıklama
+* Gizlilik seviyesi
+
+tutulmalıdır.
+
+Dosya erişim izinlerini kontrol et.
+
+Gizli kanıtlar herkese açık kanallarda paylaşılmamalıdır.
+
+⸻
+
+21. DUYURU VE BİLGİLENDİRME
+
+Gelişmiş duyuru sistemi oluştur.
+
+Özellikler:
+
+* Duyuru oluşturma
+* Duyuru düzenleme
+* Duyuru sabitleme
+* Duyuru geçmişi
+* Hedef kitle seçimi
+* Rol bazlı duyuru
+* Tüm üyelere duyuru
+* Zamanlanmış duyuru
+* Duyuru onayı
+
+Duyurular profesyonel Discord embedleriyle gönderilmelidir.
+
+⸻
+
+22. İSTATİSTİK VE AKTİVİTE
+
+Birliğin genel durumunu Discord üzerinden görüntüle.
+
+İstatistikler:
+
+* Toplam üye
+* Aktif üye
+* Pasif üye
+* Yeni katılanlar
+* Ayrılanlar
+* Başvuru sayısı
+* Kabul oranı
+* Red oranı
+* Açık ticket
+* Tamamlanan görevler
+* Ceza sayısı
+* Kasa bakiyesi
+* Gelir/gider
+* Araç sayısı
+* Bölge sayısı
+* Recruiter performansı
+
+Üye bazında aktivite raporu bulunmalıdır.
+
+İstatistikler gerçek verilerden hesaplanmalıdır.
+
+⸻
+
+23. XP VE BAŞARI SİSTEMİ
+
+İsteğe bağlı bir başarı ve katılım sistemi oluştur.
+
+Özellikler:
+
+* Aktivite puanı
+* Görev tamamlama puanı
+* Katılım geçmişi
+* Başarı rozetleri
+* Üye sıralaması
+
+XP sistemi rütbe sisteminden bağımsız olmalıdır.
+
+XP otomatik olarak rütbe vermemelidir.
+
+Terfi kararları yetkililer tarafından verilmelidir.
+
+⸻
+
+24. GİZLİ KAYIT VE ARŞİV SİSTEMİ
+
+Birlik yönetiminin özel RP kayıtları tutabilmesi için gizli arşiv sistemi oluştur.
+
+Özellikler:
+
+* Gizli kayıt oluşturma
+* Kayıt kategorisi
+* Görüntüleme yetkisi
+* İlgili üyeler
+* Tarih
+* Açıklama
+* Dosya/kanıt bağlantısı
+* Arşivleme
+
+Gizli kayıtlar yalnızca yetkilendirilmiş kişiler tarafından görüntülenebilmelidir.
+
+⸻
+
+25. İÇ SORUŞTURMA SİSTEMİ
+
+Üyeler hakkındaki birlik içi RP ve disiplin incelemeleri için kayıt sistemi oluştur.
+
+Özellikler:
+
+* Soruşturma ID
+* İlgili üye
+* Sorumlu yetkili
+* İnceleme nedeni
+* Kanıtlar
+* Yetkili notları
+* Durum
+* Sonuç
+
+Soruşturma kayıtları gizlilik seviyesine sahip olmalıdır.
+
+⸻
+
+26. OTOMATİK DISCORD SUNUCU KURULUMU
+
+Bu özellik projenin en önemli bileşenlerinden biridir.
+
+Bot sunucuya eklendiğinde /kurulum komutu ile otomatik kurulum başlatılmalıdır.
+
+Bot mevcut Discord sunucusunu analiz etmelidir.
+
+Önce mevcut:
+
+* Kategorileri
+* Kanalları
+* Rolleri
+* İzinleri
+* Bot yetkilerini
+
+incelemelidir.
+
+Daha sonra eksik yapıları oluşturmalıdır.
+
+Örnek kategoriler
+
+* BİRLİK BİLGİLENDİRME
+* GENEL
+* ÜYE İŞLEMLERİ
+* YÖNETİM
+* BAŞVURULAR
+* TICKET
+* GÖREVLER
+* DİPLOMASİ
+* ARŞİV
+* LOG
+
+Örnek kanallar
+
+* birlik-bilgi
+* duyurular
+* birlik-kuralları
+* genel-sohbet
+* üye-listesi
+* başvuru-paneli
+* yönetim-paneli
+* kasa-log
+* üye-log
+* ceza-log
+* ticket-log
+* görev-log
+* sistem-log
+
+Varsayılan roller
+
+* OG
+* Under OG (BG)
+* Recruiter
+* Kıdemli Üye
+* Üye
+* Aday
+* Bot
+
+Rütbe rollerinin sırası, 7. bölümdeki hiyerarşiyle aynı olmalıdır.
+
+Otomatik kurulum kuralları
+
+* Aynı kanalı iki kez oluşturma.
+* Aynı rolü iki kez oluşturma.
+* Mevcut yapıyı gereksiz yere silme.
+* Mevcut izinleri incele.
+* Eksik kaynakları oluştur.
+* Mevcut kaynakları uygun şekilde eşleştir.
+* Yapılan işlemleri raporla.
+* Hata oluşursa kaldığı yerden devam edebil.
+* Kurulum öncesinde yapılacak değişiklikleri göster.
+* İşlemleri uygulamadan önce yetkili onayı al.
+
+Kurulum tekrar çalıştırıldığında sistem mevcut kaynakları tanımalı ve güvenli şekilde devam etmelidir.
+
+⸻
+
+27. OTOMATİK PANEL VE MESAJ KURULUMU
+
+Kurulum sırasında aşağıdaki paneller otomatik oluşturulmalıdır:
+
+* Başvuru paneli
+* Ticket paneli
+* Yönetim paneli
+* Üye işlem paneli
+* Duyuru paneli
+* Görev paneli
+* Recruiter paneli
+
+Bot yeniden başlatıldığında aynı panelleri tekrar tekrar oluşturmamalıdır.
+
+Panel mesajlarının ID bilgileri veritabanında tutulmalıdır.
+
+Gerekirse mevcut panel mesajları düzenlenerek güncellenmelidir.
+
+⸻
+
+28. OTOMASYON SİSTEMİ
+
+Sistemler arasında otomatik işlemler oluştur.
+
+Örnekler:
+
+* Başvuru geldiğinde yetkililere bildirim.
+* Başvuru kabul edildiğinde üye kaydı oluşturma.
+* Başvuru kabul edildiğinde Discord rolü verme.
+* Recruiter davet kaydını başvuruyla ilişkilendirme.
+* Üye çıkarıldığında rollerin kaldırılması.
+* Rütbe değiştiğinde Discord rolünün güncellenmesi.
+* Ticket açıldığında yetkililere bildirim.
+* Ticket kapandığında transcript oluşturulması.
+* Kasa işlemi gerçekleştiğinde log gönderilmesi.
+* Ceza verildiğinde sicile eklenmesi.
+* Görev tamamlandığında istatistiklerin güncellenmesi.
+* Sistem hatalarında yönetim ekibine bildirim.
+* Süresi dolan kayıtların durumunun güncellenmesi.
+
+Otomasyonlar tekrarlı işlem üretmemelidir.
+
+⸻
+
+29. LOG VE DENETİM SİSTEMİ
+
+Her önemli işlem kaydedilmelidir.
+
+Log kategorileri:
+
+* Üye
+* Karakter
+* Rütbe
+* Yetki
+* Başvuru
+* Recruiter
+* Ticket
+* Kasa
+* Envanter
+* Araç
+* Bölge
+* Görev
+* Savaş
+* Diplomasi
+* Ceza
+* İhbar
+* Kanıt
+* Sistem
+* Güvenlik
+
+Her log aşağıdaki bilgileri içermelidir:
+
+* İşlem ID
+* İşlemi yapan kişi
+* İşlem türü
+* Hedef
+* Önceki değer
+* Yeni değer
+* Tarih
+* Açıklama
+
+Audit loglar normal yönetim arayüzünden silinememeli veya değiştirilememelidir.
+
+Önemli işlemlerin geçmişi korunmalıdır.
+
+⸻
+
+30. GÜVENLİK SİSTEMİ
+
+Aşağıdaki önlemleri uygula:
+
+* Rol tabanlı yetkilendirme
+* İzin tabanlı yetkilendirme
+* Girdi doğrulama
+* Hız sınırlandırması
+* Interaction sahipliği kontrolü
+* Modal doğrulaması
+* MongoDB injection koruması
+* Gizli anahtar yönetimi
+* Yetkisiz komut engelleme
+* Hassas kayıt gizliliği
+* İşlem onayı
+* Veritabanı işlem güvenliği
+* Yinelenen işlem engelleme
+
+Discord bot tokenı hiçbir zaman kod içerisinde tutulmamalıdır.
+
+Bütün kritik işlemler sunucu tarafında yetki kontrolünden geçmelidir.
+
+⸻
+
+31. DISCORD ARAYÜZÜ VE TASARIM
+
+Botun Discord üzerindeki arayüzü profesyonel ve tutarlı olmalıdır.
+
+Embedlerde:
+
+* Başlık
+* Açıklama
+* Durum
+* Kullanıcı
+* Tarih
+* İşlem numarası
+
+bulunmalıdır.
+
+Butonlar mantıklı şekilde gruplandırılmalıdır.
+
+Discord component limitlerine uyulmalıdır.
+
+Gerektiğinde sayfalama kullanılmalıdır.
+
+Örneğin 100 üyeyi tek mesajda göstermeye çalışma.
+
+Üye listesi sayfalara bölünmelidir.
+
+Bütün butonların Türkçe ve anlaşılır isimleri olmalıdır.
+
+⸻
+
+32. ARAMA VE FİLTRELEME
+
+Aşağıdaki sistemlerde arama bulunmalıdır:
+
+* Üyeler
+* Başvurular
+* Recruiter kayıtları
+* Ticketlar
+* Cezalar
+* Kanıtlar
+* Görevler
+* Araçlar
+* İşlem geçmişi
+* Birlik kayıtları
+
+Filtreleme seçenekleri:
+
+* Tarih
+* Kullanıcı
+* Durum
+* Kategori
+* Yetkili
+* İşlem türü
+
+Arama ve filtreleme Discord select menüleri ve modal formları üzerinden yapılmalıdır.
+
+⸻
+
+33. VERİTABANI MİMARİSİ
+
+MongoDB kalıcı veri kaynağı olmalıdır.
+
+Önerilen modeller:
+
+* User
+* Member
+* Character
+* Rank
+* Permission
+* RecruiterRecord
+* Application
+* ApplicationReview
+* Ticket
+* TicketMessage
+* Treasury
+* Transaction
+* InventoryItem
+* InventoryTransaction
+* Vehicle
+* Territory
+* Mission
+* OperationRecord
+* WarRecord
+* Diplomacy
+* Punishment
+* Report
+* Evidence
+* Announcement
+* Activity
+* Achievement
+* Investigation
+* AuditLog
+* GuildConfig
+* PanelConfig
+* AutomationConfig
+
+Veritabanı ilişkilerini düzgün oluştur.
+
+Gerekli indexleri ekle.
+
+Özellikle:
+
+* Kasa işlemleri
+* Rütbe değişiklikleri
+* Üye kayıtları
+* Başvurular
+* Ticketlar
+* Audit loglar
+
+için tutarlılık sağla.
+
+Kasa bakiyesini yalnızca tek bir sayıyı değiştirerek yönetme. İşlem kayıtlarıyla birlikte atomik güncelle.
+
+⸻
+
+34. 7/24 ÇALIŞMA VE DEPLOYMENT
+
+Bot benim bilgisayarım açıkken çalışmak zorunda olmamalıdır.
+
+Production ortamına uygun hazırlanmalıdır.
+
+Şunları oluştur:
+
+* Dockerfile
+* docker-compose.yml
+* Production ortam değişkenleri örneği
+* Sağlık kontrolü
+* Güvenli kapanış
+* Yeniden bağlanma yönetimi
+* Veritabanı bağlantı kurtarma
+* Hata yönetimi
+* Yapılandırılmış loglama
+* Otomatik yeniden başlatma stratejisi
+
+Bot yeniden başladığında:
+
+* Paneller korunmalı.
+* Ticket kayıtları korunmalı.
+* Başvurular korunmalı.
+* Üye bilgileri korunmalı.
+* Kasa kayıtları korunmalı.
+* Envanter korunmalı.
+* Loglar korunmalı.
+* Devam eden işlemler güvenli şekilde toparlanmalı.
+
+MongoDB tek başına botu 7/24 çalıştırmaz. Botun sürekli çalışacağı bir sunucu veya bulut çalışma ortamı da hazırlanmalıdır.
+
+⸻
+
+35. YEDEKLEME SİSTEMİ
+
+Kalıcı veriler için otomatik yedekleme sistemi oluştur.
+
+Yedeklenecek veriler:
+
+* Üyeler
+* Karakterler
+* Rütbeler
+* Yetkiler
+* Recruiter kayıtları
+* Başvurular
+* Ticketlar
+* Kasa
+* Envanter
+* Araçlar
+* Görevler
+* Ceza kayıtları
+* Kanıtlar
+* Audit loglar
+* Sistem ayarları
+
+Yedekleme işlemleri loglanmalıdır.
+
+Yedeklerin geri yüklenmesi yalnızca yetkili kişiler tarafından ve onay alınarak yapılmalıdır.
+
+⸻
+
+36. HATA YÖNETİMİ
+
+Bot hiçbir hatada kontrolsüz şekilde çökmemelidir.
+
+Aşağıdaki hata yönetimleri oluşturulmalıdır:
+
+* Global error handler
+* Unhandled rejection yönetimi
+* Uncaught exception yönetimi
+* Discord API hata yönetimi
+* MongoDB bağlantı hata yönetimi
+* Interaction zaman aşımı yönetimi
+* Yeniden bağlantı yönetimi
+
+Kullanıcıya teknik hata ayrıntıları gösterilmemelidir.
+
+Hatalar Türkçe ve anlaşılır şekilde bildirilmelidir.
+
+Teknik ayrıntılar sistem loglarına kaydedilmelidir.
+
+⸻
+
+37. TAM TÜRKÇE KULLANICI ARAYÜZÜ
+
+Botun kullanıcıya gösterdiği her şey Türkçe olmalıdır.
+
+Örnek:
+
+* Üye Yönetimi
+* Rütbe Yönetimi
+* Başvuru Oluştur
+* Başvuruyu İncele
+* Kabul Et
+* Reddet
+* İşlem Geçmişi
+* Kasa Bakiyesi
+* Para Yatır
+* Para Çek
+* Envanteri Görüntüle
+* Araç Yönetimi
+* Bölge Yönetimi
+* Görev Oluştur
+* Ceza Oluştur
+* Ticket Aç
+* Ticket Kapat
+* Yetkisiz İşlem
+* İşlem Başarılı
+* İşlem Başarısız
+* Ayarlar
+* Geri Dön
+* İptal
+* Onayla
+
+Türkçe karakterleri doğru kullan.
+
+Embedlerde bozuk karakter veya hatalı kodlama olmamalıdır.
+
+Komut adları Discord kurallarına uygun, açıklamaları ise Türkçe olmalıdır.
+
+⸻
+
+38. KULLANIM KOLAYLIĞI
+
+Kullanıcıların karmaşık komutları ezberlemesi gerekmemelidir.
+
+Ana işlemler Discord paneli üzerinden yapılmalıdır.
+
+Örnek akışlar:
+
+Üye yönetimi
+
+Üye Yönetimi → Üye Seç → İşlem Seç
+
+Başvuru yönetimi
+
+Başvurular → Başvuru Seç → İncele → Kabul Et/Reddet
+
+Rütbe yönetimi
+
+Rütbe Yönetimi → Üye Seç → Yeni Rütbe Seç → Onayla
+
+Kasa yönetimi
+
+Kasa → İşlem Seç → Tutar Gir → Açıklama Gir → Onayla
+
+Ticket yönetimi
+
+Ticket Paneli → Ticket Aç → Kategori Seç
+
+Recruiter yönetimi
+
+Recruiter Paneli → Davet Kayıtları → Aday Seç → Başvuru Durumunu Görüntüle
+
+Her işlem mümkün olduğunca az adımda tamamlanmalıdır.
+
+⸻
+
+39. GELİŞTİRME SÜRECİ
+
+Projeyi geliştirirken aşağıdaki sırayı takip et:
+
+1. Mevcut proje dosyalarını analiz et.
+2. Proje yapısını incele.
+3. Eksik modülleri belirle.
+4. Veritabanı mimarisini oluştur.
+5. Ortak yetkilendirme sistemini oluştur.
+6. Ortak log sistemini oluştur.
+7. Ortak interaction altyapısını oluştur.
+8. Üye ve rütbe sistemini geliştir.
+9. Başvuru ve Recruiter sistemini geliştir.
+10. Kasa ve envanter sistemini geliştir.
+11. Araç ve bölge sistemini geliştir.
+12. Görev ve RP kayıt sistemlerini geliştir.
+13. Diplomasi ve ceza sistemlerini geliştir.
+14. İhbar ve kanıt sistemini geliştir.
+15. Ticket sistemini geliştir.
+16. İstatistik ve başarı sistemini geliştir.
+17. Otomatik Discord kurulumunu geliştir.
+18. Panel sistemlerini oluştur.
+19. Modüller arası entegrasyonları tamamla.
+20. Testleri yaz ve çalıştır.
+21. Build al.
+22. Hataları düzelt.
+23. Son kontrolleri yap.
+
+Gereksiz yere bana soru sorma.
+
+Kritik olmayan teknik kararları kendin ver.
+
+Çalışan özellikleri gereksiz yere bozma.
+
+⸻
+
+40. TEST SENARYOLARI
+
+Aşağıdaki senaryoların tamamını test et:
+
+Üye ve rütbe
+
+* Yeni üye ekleme
+* Üye çıkarma
+* Karakter değiştirme
+* Terfi
+* Tenzil
+* Recruiter atama
+* Recruiter davet kaydı
+* Recruiter istatistikleri
+* Discord rol senkronizasyonu
+* Yetkisiz işlem denemesi
+
+Başvuru
+
+* Başvuru oluşturma
+* Başvuru inceleme
+* Başvuru puanlama
+* Başvuru kabulü
+* Başvuru reddi
+* Recruiter ile başvuru ilişkilendirme
+
+Ticket
+
+* Ticket açma
+* Ticket kapatma
+* Ticket yeniden açma
+* Transcript oluşturma
+* Yetkili atama
+
+Kasa ve envanter
+
+* Para yatırma
+* Para çekme
+* Yinelenen işlem engelleme
+* Envanter ekleme
+* Envanter çıkarma
+* Envanter geçmişi
+
+Diğer sistemler
+
+* Araç kaydı
+* Bölge kaydı
+* Görev oluşturma
+* Savaş kaydı
+* Diplomasi kaydı
+* Ceza oluşturma
+* İtiraz oluşturma
+* İhbar oluşturma
+* Kanıt ekleme
+* Gizli kayıt erişimi
+* İç soruşturma kaydı
+
+Sistem
+
+* Log oluşturma
+* Panel güncelleme
+* Bot yeniden başlatma
+* MongoDB bağlantısının kesilmesi
+* Otomatik kurulumun tekrar çalıştırılması
+* Yetkisiz erişim
+* Hatalı modal verisi
+* Discord API hatası
+* Backup oluşturma
+* Backup geri yükleme
+
+⸻
+
+41. TESLİM KRİTERLERİ
+
+Projeyi tamamladığında aşağıdaki listeyi tek tek kontrol et.
+
+[ ] Web sitesi bulunmuyor.
+[ ] Web dashboard bulunmuyor.
+[ ] Bütün yönetim Discord üzerinden yapılıyor.
+[ ] Discord.js v14 kullanılıyor.
+[ ] TypeScript mimarisi hazır.
+[ ] MongoDB bağlantısı çalışıyor.
+[ ] Kalıcı veri sistemi çalışıyor.
+[ ] Üye yönetimi çalışıyor.
+[ ] Karakter sistemi çalışıyor.
+[ ] Beş varsayılan rütbe doğru sırada oluşturuluyor.
+[ ] OG en yüksek rütbe.
+[ ] Under OG (BG) ikinci rütbe.
+[ ] Recruiter üçüncü rütbe.
+[ ] Recruiter açıklaması Çeteye Adam Çeker.
+[ ] Kıdemli Üye dördüncü rütbe.
+[ ] Üye beşinci rütbe.
+[ ] Terfi ve tenzil sistemi çalışıyor.
+[ ] Discord rol senkronizasyonu çalışıyor.
+[ ] Yetki sistemi çalışıyor.
+[ ] Başvuru sistemi çalışıyor.
+[ ] Başvuru puanlama çalışıyor.
+[ ] Recruiter sistemi çalışıyor.
+[ ] Ticket sistemi çalışıyor.
+[ ] Transcript sistemi çalışıyor.
+[ ] Kasa sistemi çalışıyor.
+[ ] İşlem geçmişi çalışıyor.
+[ ] Envanter sistemi çalışıyor.
+[ ] Araç filosu çalışıyor.
+[ ] Hood ve bölge sistemi çalışıyor.
+[ ] Görev sistemi çalışıyor.
+[ ] Operasyon kayıt sistemi çalışıyor.
+[ ] Savaş kayıt sistemi çalışıyor.
+[ ] Diplomasi sistemi çalışıyor.
+[ ] Ceza ve sicil sistemi çalışıyor.
+[ ] İhbar sistemi çalışıyor.
+[ ] Kanıt arşivi çalışıyor.
+[ ] Duyuru sistemi çalışıyor.
+[ ] İstatistikler çalışıyor.
+[ ] XP ve başarı sistemi çalışıyor.
+[ ] Gizli kayıt sistemi çalışıyor.
+[ ] İç soruşturma sistemi çalışıyor.
+[ ] Otomatik Discord kurulumu çalışıyor.
+[ ] Otomatik panel kurulumu çalışıyor.
+[ ] Log sistemi çalışıyor.
+[ ] Güvenlik sistemi çalışıyor.
+[ ] Backup sistemi çalışıyor.
+[ ] 7/24 deployment hazırlığı tamam.
+[ ] Türkçe arayüz tamamlandı.
+[ ] Testler başarılı.
+
+⸻
+
+42. SON TALİMAT
+
+Ben basit bir Discord botu istemiyorum.
+
+İstediğim proje:
+
+MTA ILLEGAL BİRLİK YÖNETİM SİSTEMİ — DISCORD EDITION
+
+Bütün yönetim işlemleri Discord üzerinden gerçekleştirilen, kalıcı veritabanı kullanan, modüler, güvenli, profesyonel ve 7/24 çalışmaya uygun kapsamlı bir yazılımdır.
+
+Bütün sistemler birbiriyle entegre çalışmalıdır.
+
+Örnek entegrasyonlar:
+
+* Başvuru kabul edilince üye kaydı oluşturulmalı.
+* Üye kaydı oluşturulunca varsayılan Üye rütbesi atanmalı.
+* Recruiter daveti varsa yeni üyeyle ilişkilendirilmeli.
+* Rütbe değişince Discord rolü güncellenmeli.
+* Kasa işlemi gerçekleşince işlem geçmişi oluşturulmalı.
+* Ceza verildiğinde sicile eklenmeli.
+* Ticket kapatıldığında transcript saklanmalı.
+* Görev tamamlandığında istatistikler güncellenmeli.
+* Bütün önemli işlemler audit log sistemine yazılmalı.
+
+Bir modülün çalışması diğer modüllerin verilerini bozmamalıdır.
+
+Yalnızca dosyaları oluşturup bırakma. Projeyi gerçekten geliştir, çalıştır, test et ve hatalarını düzelt.
+
+Eksik veya çalışmayan özellikleri tamamlanmış gibi gösterme.
+
+Dışarıdan alınması gereken token, bağlantı veya hosting bilgisi varsa bunları yalnızca gerçekten gerekli olduklarında belirt.
+
+Teknik olarak otomatik yapılabilecek bütün işlemleri kendin gerçekleştir.
+
+Projenin sonunda:
+
+1. Tamamlanan özellikleri raporla.
+2. Test sonuçlarını bildir.
+3. Eksik kalan özellikleri açıkça belirt.
+4. Gerekli deployment adımlarını Türkçe açıkla.
+5. Gerçekten gerekli olan kullanıcı işlemlerini listele.
+
+Hedef: Eksiksiz, güvenilir ve uzun süre kullanılabilecek profesyonel bir MTA Illegal Birlik Discord Botu.

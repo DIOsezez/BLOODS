@@ -1,0 +1,6 @@
+{
+  "name": "MTA Illegal Birlik Yönetim Botu",
+  "description": "MTA:SA Roleplay sunucuları için Discord.js v14 ve MongoDB tabanlı tam kapsamlı illegal birlik yönetim botu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

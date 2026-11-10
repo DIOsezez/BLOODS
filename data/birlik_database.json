@@ -1,0 +1,448 @@
+{
+  "version": "1.2.0",
+  "lastSaved": "2026-11-10T14:19:15.934Z",
+  "gangInfo": {
+    "name": "BLOOD'S",
+    "tag": "BLOOD",
+    "description": "MTA:SA Roleplay Sunucusu İllegal Sokak Hükümdarlığı",
+    "foundedDate": "2024-01-01T00:00:00.000Z",
+    "leaderName": "OG",
+    "status": "Aktif",
+    "historyNotes": "Ganton, Idlewood ve Willowfield bölgelerinde köklü illegal hakimiyet."
+  },
+  "ranks": [
+    {
+      "id": "rank-5",
+      "name": "👑 ┊ OG",
+      "level": 5,
+      "description": "En yüksek rütbe. Birliğin lideri ve mutlak yetkilisi.",
+      "permissions": [
+        "member.view",
+        "member.create",
+        "member.edit",
+        "member.remove",
+        "rank.promote",
+        "rank.demote",
+        "rank.manage",
+        "economy.view",
+        "economy.deposit",
+        "economy.withdraw",
+        "inventory.manage",
+        "vehicle.manage",
+        "territory.manage",
+        "application.review",
+        "recruiter.manage",
+        "ticket.manage",
+        "mission.manage",
+        "war.manage",
+        "diplomacy.manage",
+        "punishment.create",
+        "report.view",
+        "evidence.view",
+        "confidential.view",
+        "investigation.manage",
+        "logs.view",
+        "settings.manage",
+        "backup.manage"
+      ],
+      "createdAt": "2026-11-10T14:19:15.813Z",
+      "updatedAt": "2026-11-10T14:19:15.813Z"
+    },
+    {
+      "id": "rank-4",
+      "name": "⭐ ┊ Under OG",
+      "level": 4,
+      "description": "OG'nin altındaki yönetim rütbesi. Birlik idaresi ve operasyon liderliği.",
+      "permissions": [
+        "member.view",
+        "member.create",
+        "member.edit",
+        "rank.promote",
+        "rank.demote",
+        "economy.view",
+        "economy.deposit",
+        "economy.withdraw",
+        "inventory.manage",
+        "vehicle.manage",
+        "territory.manage",
+        "application.review",
+        "recruiter.manage",
+        "ticket.manage",
+        "mission.manage",
+        "war.manage",
+        "diplomacy.manage",
+        "punishment.create",
+        "report.view",
+        "evidence.view",
+        "confidential.view",
+        "investigation.manage",
+        "logs.view"
+      ],
+      "createdAt": "2026-11-10T14:19:15.813Z",
+      "updatedAt": "2026-11-10T14:19:15.813Z"
+    },
+    {
+      "id": "rank-3",
+      "name": "🎯 ┊ Recruiter",
+      "level": 3,
+      "description": "Çeteye Adam Çeker. Yeni adayları bulma, davet etme ve ön eleme sorumlusu.",
+      "permissions": [
+        "member.view",
+        "recruiter.manage",
+        "application.review",
+        "ticket.manage",
+        "economy.view",
+        "economy.deposit"
+      ],
+      "createdAt": "2026-11-10T14:19:15.813Z",
+      "updatedAt": "2026-11-10T14:19:15.813Z"
+    },
+    {
+      "id": "rank-2",
+      "name": "🔥 ┊ Kıdemli Üye",
+      "level": 2,
+      "description": "Deneyimli üye. Operasyonlarda ve hood güvenliğinde kıdemli katılım.",
+      "permissions": [
+        "member.view",
+        "economy.view",
+        "economy.deposit",
+        "evidence.view"
+      ],
+      "createdAt": "2026-11-10T14:19:15.813Z",
+      "updatedAt": "2026-11-10T14:19:15.813Z"
+    },
+    {
+      "id": "rank-1",
+      "name": "🩸 ┊ Üye",
+      "level": 1,
+      "description": "Başlangıç rütbesi. Birliğin temel üyesi.",
+      "permissions": [
+        "member.view",
+        "economy.deposit"
+      ],
+      "createdAt": "2026-11-10T14:19:15.813Z",
+      "updatedAt": "2026-11-10T14:19:15.813Z"
+    }
+  ],
+  "members": [],
+  "recruiterInvites": [],
+  "applications": [],
+  "tickets": [],
+  "treasury": {
+    "id": "treasury-main",
+    "guildId": "default",
+    "balance": 0,
+    "maxWithdrawLimit": 5000000,
+    "updatedAt": "2026-11-10T14:19:15.883Z"
+  },
+  "transactions": [],
+  "inventory": [],
+  "inventoryTransactions": [],
+  "vehicles": [],
+  "territories": [],
+  "missions": [],
+  "warRecords": [],
+  "diplomacy": [],
+  "punishments": [],
+  "reports": [],
+  "evidenceList": [],
+  "announcements": [],
+  "achievements": [
+    {
+      "id": "ach-1",
+      "title": "İlk Adım",
+      "description": "Birliğe başarıyla katıldı.",
+      "badgeIcon": "🟢",
+      "rewardXp": 100
+    },
+    {
+      "id": "ach-2",
+      "title": "Sokakların Efendisi",
+      "description": "5 operasyona katıldı.",
+      "badgeIcon": "🔫",
+      "rewardXp": 250
+    },
+    {
+      "id": "ach-3",
+      "title": "Sadakat Nişanı",
+      "description": "Birliğe 1 ay kesintisiz hizmet etti.",
+      "badgeIcon": "⭐",
+      "rewardXp": 500
+    },
+    {
+      "id": "ach-4",
+      "title": "Usta Recruiter",
+      "description": "Birliğe en az 5 aktif üye kazandırdı.",
+      "badgeIcon": "🤝",
+      "rewardXp": 400
+    },
+    {
+      "id": "ach-5",
+      "title": "Birlik Hazinesi",
+      "description": "Kasaya 1.000.000$ ve üzeri katkı sağladı.",
+      "badgeIcon": "💰",
+      "rewardXp": 350
+    }
+  ],
+  "memberAchievements": [],
+  "investigations": [],
+  "secretRecords": [],
+  "loadouts": [],
+  "rivals": [],
+  "meetings": [],
+  "warnings": [],
+  "inactivityRequests": [],
+  "auditLogs": [],
+  "guildConfig": {
+    "guildId": "123456789012345678",
+    "isConfigured": true,
+    "roleMappings": {
+      "0": "role-candidate-5867",
+      "1": "role-1-5855",
+      "2": "role-2-5855",
+      "3": "role-3-5855",
+      "4": "role-4-5855",
+      "5": "role-5-5855"
+    },
+    "channelMappings": {
+      "kanal-rehberi": "chan-kanal-rehberi-5855",
+      "rutbe-bilgilendirme": "chan-rutbe-bilgilendirme-5855",
+      "birlik-bilgi": "chan-birlik-bilgi-5855",
+      "duyurular": "chan-duyurular-5855",
+      "birlik-kurallari": "chan-birlik-kurallari-5855",
+      "genel-sohbet": "chan-genel-sohbet-5855",
+      "muhabbet": "chan-muhabbet-5855",
+      "medya": "chan-medya-5855",
+      "klipler": "chan-klipler-5855",
+      "fotograflar": "chan-fotograflar-5855",
+      "mizah": "chan-mizah-5855",
+      "oyun-sohbeti": "chan-oyun-sohbeti-5855",
+      "uye-listesi": "chan-uye-listesi-5855",
+      "inaktiflik-bildir": "chan-inaktiflik-bildir-5855",
+      "birlik-sohbet": "chan-birlik-sohbet-5855",
+      "birlik-muhabbet": "chan-birlik-muhabbet-5855",
+      "birlik-medya": "chan-birlik-medya-5855",
+      "birlik-klipleri": "chan-birlik-klipleri-5855",
+      "birlik-etkinlikleri": "chan-birlik-etkinlikleri-5855",
+      "toplanti-duyurulari": "chan-toplanti-duyurulari-5855",
+      "toplanti-gundemi": "chan-toplanti-gundemi-5855",
+      "toplanti-notlari": "chan-toplanti-notlari-5855",
+      "toplanti-kararlari": "chan-toplanti-kararlari-5855",
+      "toplanti-arsivi": "chan-toplanti-arsivi-5855",
+      "ses-toplanti-odasi": "chan-ses-toplanti-odasi-5855",
+      "ses-yonetim-toplantisi": "chan-ses-yonetim-toplantisi-5855",
+      "ses-ozel-toplanti-odasi": "chan-ses-ozel-toplanti-odasi-5855",
+      "inaktiflik-yonetim": "chan-inaktiflik-yonetim-5855",
+      "yonetim-toplanti": "chan-yonetim-toplanti-5855",
+      "yonetim-gundem": "chan-yonetim-gundem-5855",
+      "yonetim-kararlari": "chan-yonetim-kararlari-5855",
+      "yonetim-toplanti-arsivi": "chan-yonetim-toplanti-arsivi-5855",
+      "ses-yonetim-toplanti-odasi-vip": "chan-ses-yonetim-toplanti-odasi-vip-5855",
+      "ses-ozel-yonetim-odasi-vip": "chan-ses-ozel-yonetim-odasi-vip-5855",
+      "ekip-sohbet": "chan-ekip-sohbet-5855",
+      "gorev-ekibi": "chan-gorev-ekibi-5856",
+      "recruiter-sohbet": "chan-recruiter-sohbet-5856",
+      "yonetim-sohbet-birim": "chan-yonetim-sohbet-birim-5856",
+      "ses-ekip-odasi-unit": "chan-ses-ekip-odasi-unit-5856",
+      "ses-gorev-odasi-unit": "chan-ses-gorev-odasi-unit-5856",
+      "ses-recruiter-odasi-unit": "chan-ses-recruiter-odasi-unit-5856",
+      "ses-genel-ses": "chan-ses-genel-ses-5856",
+      "ses-birlik-odasi": "chan-ses-birlik-odasi-5856",
+      "ses-muhabbet-odasi": "chan-ses-muhabbet-odasi-5856",
+      "ses-ekip-odasi": "chan-ses-ekip-odasi-5856",
+      "ses-gorev-odasi": "chan-ses-gorev-odasi-5856",
+      "ses-toplanti-odasi-genel": "chan-ses-toplanti-odasi-genel-5856",
+      "ses-yonetim-odasi": "chan-ses-yonetim-odasi-5856",
+      "ses-ozel-gorusme": "chan-ses-ozel-gorusme-5856",
+      "basvuru-paneli": "chan-basvuru-paneli-5856",
+      "gorev-paneli": "chan-gorev-paneli-5856",
+      "recruiter-paneli": "chan-recruiter-paneli-5856",
+      "kasa-durumu": "chan-kasa-durumu-5856",
+      "envanter-depo": "chan-envanter-depo-5856",
+      "arac-filosu": "chan-arac-filosu-5856",
+      "birlik-istatistik": "chan-birlik-istatistik-5856",
+      "uyari-log": "chan-uyari-log-5856",
+      "yonetim-paneli": "chan-yonetim-paneli-5856",
+      "basvuru-yonetim": "chan-basvuru-yonetim-5856",
+      "sorusturma-kayit": "chan-sorusturma-kayit-5856",
+      "ceza-sicil": "chan-ceza-sicil-5856",
+      "ihbar-bildirim": "chan-ihbar-bildirim-5856",
+      "kanit-arsivi": "chan-kanit-arsivi-5856",
+      "diplomasi-kanali": "chan-diplomasi-kanali-5856",
+      "savas-kayitlari": "chan-savas-kayitlari-5856",
+      "bolge-hood": "chan-bolge-hood-5856",
+      "operasyon-raporlari": "chan-operasyon-raporlari-5856",
+      "kasa-log": "chan-kasa-log-5856",
+      "uye-log": "chan-uye-log-5856",
+      "ceza-log": "chan-ceza-log-5856",
+      "gorev-log": "chan-gorev-log-5856",
+      "sistem-log": "chan-sistem-log-5856"
+    },
+    "panelMessageIds": {
+      "birlik": {
+        "channelId": "📜・birlik-manifesto",
+        "channelName": "📜・birlik-manifesto",
+        "messageId": "msg-birlik-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "uye": {
+        "channelId": "👥・üye-künyesi",
+        "channelName": "👥・üye-künyesi",
+        "messageId": "msg-uye-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "rutbe": {
+        "channelId": "⚖️・yeraltı-yasaları",
+        "channelName": "⚖️・yeraltı-yasaları",
+        "messageId": "msg-rutbe-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "yetki": {
+        "channelId": "📌・strateji-masası",
+        "channelName": "📌・strateji-masası",
+        "messageId": "msg-yetki-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "basvuru": {
+        "channelId": "📝・katılım-başvuru",
+        "channelName": "📝・katılım-başvuru",
+        "messageId": "msg-basvuru-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "recruiter": {
+        "channelId": "🏹・recruiter-paneli",
+        "channelName": "🏹・recruiter-paneli",
+        "messageId": "msg-recruiter-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "kasa": {
+        "channelId": "💵・kara-kasa",
+        "channelName": "💵・kara-kasa",
+        "messageId": "msg-kasa-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "envanter": {
+        "channelId": "📦・kaçak-depo",
+        "channelName": "📦・kaçak-depo",
+        "messageId": "msg-envanter-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "arac": {
+        "channelId": "🚗・birlik-garajı",
+        "channelName": "🚗・birlik-garajı",
+        "messageId": "msg-arac-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "hood": {
+        "channelId": "📍・hood-hakimiyeti",
+        "channelName": "📍・hood-hakimiyeti",
+        "messageId": "msg-hood-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "gorev": {
+        "channelId": "🎯・operasyon-paneli",
+        "channelName": "🎯・operasyon-paneli",
+        "messageId": "msg-gorev-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "operasyon": {
+        "channelId": "⚔️・operasyon-raporu",
+        "channelName": "⚔️・operasyon-raporu",
+        "messageId": "msg-operasyon-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "savas": {
+        "channelId": "🔥・savaş-kayıtları",
+        "channelName": "🔥・savaş-kayıtları",
+        "messageId": "msg-savas-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "diplomasi": {
+        "channelId": "🤝・diplomatik-durum",
+        "channelName": "🤝・diplomatik-durum",
+        "messageId": "msg-diplomasi-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "ceza": {
+        "channelId": "💀・kara-liste-sicil",
+        "channelName": "💀・kara-liste-sicil",
+        "messageId": "msg-ceza-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "ihbar": {
+        "channelId": "🚨・gizli-ihbar-kutusu",
+        "channelName": "🚨・gizli-ihbar-kutusu",
+        "messageId": "msg-ihbar-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "kanit": {
+        "channelId": "📁・delil-kasası",
+        "channelName": "📁・delil-kasası",
+        "messageId": "msg-kanit-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "duyuru": {
+        "channelId": "📢・resmi-tebliğler",
+        "channelName": "📢・resmi-tebliğler",
+        "messageId": "msg-duyuru-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "istatistik": {
+        "channelId": "📊・çete-istatistik",
+        "channelName": "📊・çete-istatistik",
+        "messageId": "msg-istatistik-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "basari": {
+        "channelId": "🏆・etkinlik-buluşma",
+        "channelName": "🏆・etkinlik-buluşma",
+        "messageId": "msg-basari-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "gizli": {
+        "channelId": "🗄️・kriptolu-arşiv",
+        "channelName": "🗄️・kriptolu-arşiv",
+        "messageId": "msg-gizli-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "sorusturma": {
+        "channelId": "🔍・iç-soruşturma",
+        "channelName": "🔍・iç-soruşturma",
+        "messageId": "msg-sorusturma-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "guvenlik": {
+        "channelId": "🛡️・sistem-log",
+        "channelName": "🛡️・sistem-log",
+        "messageId": "msg-guvenlik-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "ayarlar": {
+        "channelId": "⚡・merkez-yönetim",
+        "channelName": "⚡・merkez-yönetim",
+        "messageId": "msg-ayarlar-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      },
+      "toplanti": {
+        "channelId": "📋・toplantı-gündemi",
+        "channelName": "📋・toplantı-gündemi",
+        "messageId": "msg-toplanti-5868",
+        "sentAt": "2026-11-10T14:19:15.868Z"
+      }
+    },
+    "categoryMappings": {
+      "___b_lg_lend_rme": "cat-___b_lg_lend_rme-5855",
+      "___sokak_ve_sohbet": "cat-___sokak_ve_sohbet-5855",
+      "___b_rl_k__zel_sohbet": "cat-___b_rl_k__zel_sohbet-5855",
+      "____toplantilar": "cat-____toplantilar-5855",
+      "___y_net_m_karargahi": "cat-___y_net_m_karargahi-5855",
+      "___operasyon_b_r_mler_": "cat-___operasyon_b_r_mler_-5855",
+      "___tels_z_frekanslari": "cat-___tels_z_frekanslari-5856",
+      "__y_net_m_paneller_": "cat-__y_net_m_paneller_-5856",
+      "____yargi_ve_d_s_pl_n": "cat-____yargi_ve_d_s_pl_n-5856",
+      "___saha_ve_d_plomas_": "cat-___saha_ve_d_plomas_-5856",
+      "___g_zl__log_ve_denet_m": "cat-___g_zl__log_ve_denet_m-5856"
+    },
+    "configuredAt": "2026-11-10T14:19:15.868Z"
+  }
+}
